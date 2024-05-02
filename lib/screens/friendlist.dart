@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'drawer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:week7_networking_discussion/providers/slambook_provider.dart';
+import '../models/friend.dart';
 
 class FriendListPage extends StatelessWidget {
   const FriendListPage({Key? key}) : super(key: key);
@@ -19,6 +20,8 @@ class FriendListPage extends StatelessWidget {
       );
     } else {
       friends.forEach((element) {
+        Friend friend = Friend.fromJson(element.data() as Map<String, dynamic>);
+        friend.id = element.id!;
         _friendsListTileWidget.add(
           Padding(
             padding: EdgeInsets.only(bottom: 30, right: 30, left: 30),
@@ -27,7 +30,7 @@ class FriendListPage extends StatelessWidget {
                 Icons.people,
                 size: 20,
               ),
-              title: Text(element.formValues['name']),
+              title: Text(friend.formValues['name']),
               tileColor: Colors.black12,
               onTap: () {
                 Navigator.pushNamed(

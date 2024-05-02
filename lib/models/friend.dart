@@ -27,6 +27,7 @@ class Friend {
 
   Map<String, dynamic> toJson(Friend friend) {
     return {
+      'userId': friend.userId,
       'formValues': friend.formValues,
     };
   }
