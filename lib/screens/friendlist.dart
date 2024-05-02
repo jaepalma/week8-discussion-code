@@ -33,11 +33,31 @@ class FriendListPage extends StatelessWidget {
               title: Text(friend.formValues['name']),
               tileColor: Colors.black12,
               onTap: () {
-                Navigator.pushNamed(
+                Friend.view = friend;
+                Navigator.pushNamedAndRemoveUntil(
                   context,
-                  "/friendsprofile",
+                  "/friendsprofile", ((Route<dynamic> route) => false)
                 );
               },
+
+              trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.edit),
+                  onPressed: () {
+                    Friend.edit = friend;
+                    Navigator.pushNamedAndRemoveUntil(context, '/editpage', ((Route<dynamic> route) => false));
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.delete),
+                  onPressed: () {
+                    context.read<SlambookProvider>().deleteFriend(friend.id!);
+                  },
+                ),
+              ],
+            ),
             ),
           ),
         );

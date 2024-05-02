@@ -27,9 +27,9 @@ class FirebaseTodoAPI {
     }
   }
 
-  Future<String> editFriend(String id, String title) async {
+  Future<String> editFriend(String id, Map<String, dynamic> formValues) async {
     try {
-      await db.collection("friends").doc(id).update({"title": title});
+      await db.collection("friends").doc(id).update({"formValues": formValues});
 
       return "Successfully edited!";
     } on FirebaseException catch (e) {

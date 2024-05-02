@@ -6,15 +6,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:week7_networking_discussion/screens/editpage.dart';
 import 'package:week7_networking_discussion/screens/friendlist.dart';
 import 'package:week7_networking_discussion/screens/friendsprofile.dart';
 import 'package:week7_networking_discussion/screens/slambook.dart';
 import 'providers/slambook_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'screens/slambook.dart';
-import 'screens/friendlist.dart';
-import 'screens/friendsprofile.dart';
 
 void main() async {
 WidgetsFlutterBinding.ensureInitialized();
@@ -43,7 +41,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/friendlist': (context) => const FriendListPage(),
         '/slambook': (context) => const Slambook(),
-        // '/friendsprofile': (context) => const FriendProfilePage(),
+        '/friendsprofile': (context) => const FriendProfilePage(),
+        '/editpage': (context) => const EditPage(),
       },
     );
   }
