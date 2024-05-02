@@ -1,20 +1,27 @@
-# Simple Todo App
+# Week #: Topic
 
-This simple todo app has an add, edit, and delete functionality. It uses a provider for state management
+**Name:** Your Name <br/>
+**Section:** U-#L <br/>
+**Student number:** 2018 - 12345 <br/>
 
-## Folder Structure
-```
-lib
-├───models
-│   └───todo_model.dart
-├───providers
-│   └───todo_provider.dart
-├───screens
-│   ├───modal_todo.dart
-│   └───todo_page.dart
-└───main.dart
-```
+## Code Description
 
-* Models - contains the data model used
-* Providers - contains the Todo provider that contains the data and method logic
-* Screens - contains the screen/widgets used
+Describe what your code does here
+
+## Things you did in the code
+
+Describe what you did here
+
+## Challenges encountered
+
+Describe your challenges here
+
+## Commit Log
+
+1. Initial commit
+2.
+
+## References
+
+- link to the reference
+- another link
